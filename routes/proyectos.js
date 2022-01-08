@@ -10,6 +10,7 @@ const proyectoController = require("./../controllers/proyectoController")
 router.post("/create", proyectoController.create)
 
 // Leer todos los proyectos.
+router.get("/readall", proyectoController.readAll)
 
 // Leer un proyecto.
 

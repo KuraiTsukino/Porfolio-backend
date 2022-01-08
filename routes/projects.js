@@ -10,9 +10,10 @@ const projectController = require("./../controllers/projectController")
 router.post("/create", projectController.create)
 
 // Leer todos los project.
+router.get("/readall", projectController.readAll)
 
 // Leer un project.
-
+router.get("/readone/:id", projectController.readOne)
 // Actualizar un project.
 
 // Borrar un project.

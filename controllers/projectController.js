@@ -39,3 +39,44 @@ exports.create = async (req, res) => {
         })
     }
 }
+
+exports.readAll = async (req, res) => {
+
+    try {
+        const projects = await Project.find({})
+
+        res.json({
+            msg: "Projects successfully obtained",
+            data: projects
+        })
+        
+    } catch (error) {
+
+        res.status(500).json({
+            msg: "There was an error getting the data",
+            error: error
+        })
+        
+    }
+}
+
+exports.readOne = async (req, res) => {
+
+    const { id } = req.params
+
+    try {
+        const project = await Project.findById(id)
+
+        res.json({
+            msg: "Project obtained succesfully",
+            data: project
+        })
+
+    } catch (error) {
+        
+        res.status(500).json({
+            msg: "There was an error obtained the data",
+            error: error
+        })
+    }
+}

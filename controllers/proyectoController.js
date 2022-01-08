@@ -40,3 +40,22 @@ exports.create = async (req, res) => {
         })
     }
 }
+
+exports.readAll = async (req, res) => {
+
+    try {
+        const proyectos = await Proyecto.find({})
+
+        res.json({
+            msg: "Proyectos obtenidos con éxito",
+            data: proyectos
+        })
+
+    } catch (error) {
+        
+        res.status(500).json({
+            msg: "Hubo problemas obteniendo los proyectos",
+            error: error 
+        })
+    }
+}
