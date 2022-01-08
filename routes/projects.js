@@ -14,9 +14,6 @@ router.get("/readall", projectController.readAll)
 
 // Leer un project.
 router.get("/readone/:id", projectController.readOne)
-// Actualizar un project.
-
-// Borrar un project.
 
 // 3. Exportaciones
 module.exports = router

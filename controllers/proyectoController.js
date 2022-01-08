@@ -59,3 +59,24 @@ exports.readAll = async (req, res) => {
         })
     }
 }
+
+exports.readOne = async (req, res) => {
+
+    const { id } = req.params
+
+    try {
+        const proyecto = await Proyecto.findById(id)
+
+        res.json({
+            msg: "Proyecto obtenido con éxito",
+            data: proyecto
+        })
+
+    } catch (error) {
+        
+        res.status(500).json({
+            msg: "Hubo un error obteniendo el proyecto",
+            error: error
+        })
+    }
+}

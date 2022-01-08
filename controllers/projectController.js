@@ -49,7 +49,7 @@ exports.readAll = async (req, res) => {
             msg: "Projects successfully obtained",
             data: projects
         })
-        
+
     } catch (error) {
 
         res.status(500).json({
@@ -80,3 +80,4 @@ exports.readOne = async (req, res) => {
         })
     }
 }
+

@@ -13,10 +13,7 @@ router.post("/create", proyectoController.create)
 router.get("/readall", proyectoController.readAll)
 
 // Leer un proyecto.
-
-// Actualizar un proyecto.
-
-// Borrar un proyecto.
+router.get("/readone/:id", proyectoController.readOne)
 
 // 3. Exportaciones
 module.exports = router
